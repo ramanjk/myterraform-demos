@@ -4,6 +4,10 @@ provider "aws" {
 }
 # Reference: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 resource "aws_instance" "myvm1" {
-  ami = "ami-079b5e5b3971bd10d"
+  ami = "ami-08df646e18b182346"
   instance_type = "t2.micro"
+  tags = {
+    Name = "webserver1"
+    Application = "CRM"
+}
 }
